@@ -1,0 +1,116 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3>Creating widgets</h3>
+    </div>
+    <div class="panel-body">
+        At their core, jQuery UI widgets are jQuery plugins with added functionality to make
+        them customizable, extensible, and themeable. Whereas most jQuery plugins run
+        once and are done, widget plugins remember the elements they’re associated with.
+        You can then customize the widget with options, control it with methods, and respond
+        to changes on the widget with events.
+        How do you create widgets? Because widgets are also jQuery plugins, the syntax to
+        create them should look familiar. You saw the syntax when you created a datepicker in
+        chapter 1. Let’s look at that example in more detail:
+    </div>
+</div>
+<pre>
+    <code>
+&lt;input id="datepicker"&gt;
+&lt;script&gt;
+$("#datepicker").datepicker();
+&lt;/script&gt;
+    </code>
+</pre>
+
+<input id="datepicker">
+<script>
+    $("#datepicker").datepicker();
+</script>
+<br>
+<br>
+
+<div class="panel panel-info">
+<!--    <div class="panel-heading">
+        <h3>Creating widgets</h3>
+    </div>-->
+    <div class="panel-body">
+        Because all jQuery UI widgets are also plugins, the same syntax of selecting elements
+        and calling the plugin can be used to create any of them. Here is how you can create a
+        dialog widget:
+    </div>
+</div>
+<pre>
+    <code>
+&lt;div id=&quot;dialog&quot;&gt;jQuery UI Rocks!&lt;/div&gt;
+&lt;script&gt;
+$( &quot;#dialog&quot; ).dialog();
+&lt;/script&gt;
+    </code>
+</pre>
+
+<div id="dialog">jQuery UI Rocks!</div>
+<script>
+    $('#dialog').dialog();
+</script>
+
+
+
+<div class="panel panel-info">
+    <!--    <div class="panel-heading">
+            <h3>Creating widgets</h3>
+        </div>-->
+    <div class="panel-body">
+        Like most jQuery plugins, jQuery UI widget plugins return a jQuery object. The
+        plugin can then be chained with other jQuery method calls. The following code creates
+        a dialog and uses jQuery Core’s css() method to change the text color to red:
+    </div>
+</div>
+<pre>
+    <code>
+        &lt;div id=&quot;dialog&quot;&gt;jQuery UI Rocks!&lt;/div&gt;
+&lt;script&gt;
+$( &quot;#dialog&quot; )
+.dialog()
+.css(&quot;color&quot;, &quot;red&quot; );
+&lt;/script&gt;
+    </code>
+</pre>
+<div id="dialog2">Jquery UI Rocks</div>
+
+<script>
+    $('#dialog2').dialog().css('color','red');
+</script>
+
+<div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>Dynamically Creating widgets</h3>
+        </div>
+    <div class="panel-body">
+        In addition to selecting elements on the DOM, you can also dynamically create elements
+        and convert them to widgets. The following uses jQuery to create a new &lt;input&gt;
+        element and convert it to a datepicker widget:
+    </div>
+</div>
+
+<pre>
+    <code>
+        $(&quot;&lt;input&gt;&quot;).datepicker();
+    </code>
+</pre>
+
+<div class="panel panel-info">
+
+    <div class="panel-body">
+        Because the newly created element isn’t on the DOM, you need to add it for the widget
+        to be visible. The following creates a new element, converts it to a datepicker, and
+        appends it to the &lt;body&gt;:
+    </div>
+</div>
+<pre>
+    <code>
+        $( &quot;&lt;input&gt;&quot; ).datepicker().appendTo( &quot;body&quot; );
+    </code>
+</pre>
+<script>
+$('<input>').datepicker().appendTo('body');
+</script>
